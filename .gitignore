@@ -1,3 +1,6 @@
+_all/
+*.doc
+
 # Prerequisites
 *.d
 
