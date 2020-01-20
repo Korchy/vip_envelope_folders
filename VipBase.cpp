@@ -26,23 +26,48 @@ void VipBase::CreateBaseDir(System::String^ BaseDir, System::String^ OurRef) {
 	// Äèðåêòîðèè íå ñîçäàâàòü
 // Ñîçäàòü äèðåêòîðèè ïî áàçàì
 	// Äëÿ âñåõ
-	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÔÈÏÑ");
-	System::IO::Directory::CreateDirectory(Dest+"\\"+"îò CL");
-	System::IO::Directory::CreateDirectory(Dest+"\\"+"to CL");
-	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÂÈÏ");
+	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÎÒ CL");
+	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÄËß CL");
+	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÂèÏ");
 	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÈÍÑÒÐÓÊÖÈß ÊËÈÅÍÒÀ");
-	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÏÓÁËÈÊÀÖÈß ÍÀ ÔÈÏÑ");
 	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÔÈÍÀÍÑÎÂÛÅ ÄÎÊÓÌÅÍÒÛ");
-	System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
 	// Ïî áàçàì
 //	System::String^ Base = Dest->Substring(3,2);
 	// Ïðîâåðÿåì èç ïîëíîé äèðåêòîðèè
 	if(BaseDir->Contains("\\03\\")) {
-	System::IO::Directory::CreateDirectory(Dest+"\\"+"ÏÅÐÅ×ÅÍÜ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÔÈÏÑ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÏÓÁËÈÊÀÖÈß ÍÀ ÔÈÏÑ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÏÅÐÅ×ÅÍÜ");
 		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÒÇ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
+	}
+	if(BaseDir->Contains("\\07\\")) {
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÔÈÏÑ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
+	}
+	if(BaseDir->Contains("\\08\\")) {
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÔÈÏÑ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
+	}
+	if(BaseDir->Contains("\\09\\")) {
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÔÈÏÑ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
+	}
+	if(BaseDir->Contains("\\11\\")) {
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÑÓÄ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
+	}
+	if(BaseDir->Contains("\\20\\")) {
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÑÓÄ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
 	}
 	if(BaseDir->Contains("\\39\\")) {
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÒÇ");
 		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÏÐÎÂÅÐÊÀ");
+	}
+	if(BaseDir->Contains("\\44\\")) {
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"ÑÓÄ");
+		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
 	}
 }
 //---------------------------------------------------------------------------

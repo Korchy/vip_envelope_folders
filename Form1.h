@@ -103,8 +103,12 @@ namespace TCMPluginDir {
 			array<String^>^ arguments = Environment::GetCommandLineArgs();
 			String^ Dest = "";
 			// “.к. Total Commander разбивает путь к директории, если есть пробелы в названи€х - собрать строку целиком
-			for(int i=1;i<arguments->Length;i++) {
-				Dest = Dest->Concat(Dest," ",arguments[i]);
+			for(int i=1; i < arguments->Length; i++) {
+				Dest = Dest->Concat(Dest, " ", arguments[i]);
+			}
+			// ≈сли нет завершающего слеша - добавить
+			if(Dest->Substring(Dest->Length - 1) != "\\") {
+				Dest = Dest->Concat(Dest, "\\");
 			}
 /*				// —оздание директории
 			Dest = Dest->Concat(Dest,"\\",this->textBox1->Text);
