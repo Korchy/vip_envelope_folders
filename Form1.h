@@ -129,7 +129,7 @@ namespace TCMPluginDir {
 */
 			// Создать директории по OurRef
 			VipBase* VBase = new VipBase();
-			VBase->CreateBaseDir(Dest, this->textBox1->Text);
+			bool rez = VBase->CreateBaseDir(Dest, this->textBox1->Text);
 /*
 			// Скопировать файл STOP.doc
 			Dest = Dest->Concat(Dest,"\\",this->textBox1->Text);
@@ -145,12 +145,17 @@ namespace TCMPluginDir {
 			MessageBox::Show( this, CurrentPath, caption, buttons );
 */
 			// Закрыть окно
-			Close();
+			if(rez == true) {
+				Close();
+			}
+			
 			 }
 
 	private: System::Void textBox1_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
 				 // По нажатию Enter - нажимать на кнопку
-				 if(e->KeyCode== Keys::Enter) button1_Click(sender,e);
+				 if(e->KeyCode == Keys::Enter) button1_Click(sender,e);
+				 // Esc - закрыть
+				 if(e->KeyCode == Keys::Escape) Close();
 			 }
 	};
 }

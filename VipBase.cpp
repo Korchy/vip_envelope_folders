@@ -17,8 +17,11 @@ VipBase::~VipBase()
 }
 //---------------------------------------------------------------------------
 //void VipBase::CreateBaseDir(std::wstring BaseDir, std::wstring OurRef)
-void VipBase::CreateBaseDir(System::String^ BaseDir, System::String^ OurRef) {
+bool VipBase::CreateBaseDir(System::String^ BaseDir, System::String^ OurRef) {
 	// Создание директорий в зависимости от типа базы (определяем по OurRef
+	if(OurRef == "" || OurRef->Contains(":") || OurRef->Contains("\\") || OurRef->Contains("/")) {
+		return false;
+	}
 	// Создать основную директорию
 	System::String^ Dest = BaseDir+OurRef;
 	System::IO::Directory::CreateDirectory(Dest);
@@ -69,5 +72,7 @@ void VipBase::CreateBaseDir(System::String^ BaseDir, System::String^ OurRef) {
 		System::IO::Directory::CreateDirectory(Dest+"\\"+"СУД");
 		System::IO::Directory::CreateDirectory(Dest+"\\"+"POA");
 	}
+
+	return true;
 }
 //---------------------------------------------------------------------------

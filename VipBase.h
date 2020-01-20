@@ -23,7 +23,7 @@ public:
 	
 	// Функции
 //	void CreateBaseDir(std::wstring BaseDir, std::wstring OurRef);	// Создание директорий в зависимости от типа базы
-	void CreateBaseDir(System::String^ BaseDir, System::String^ OurRef);	// Создание директорий в зависимости от типа базы
+	bool CreateBaseDir(System::String^ BaseDir, System::String^ OurRef);	// Создание директорий в зависимости от типа базы
 
 };
 #endif
